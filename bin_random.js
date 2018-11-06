@@ -3,8 +3,9 @@ function flip() {
 }
 
 function randomNumber(n) {
+  if(n === undefined) throw new Error("n is required");
   if(n <= 0) throw new Error("n must be greater than 0");
-  if(n > 1000000) throw new Error("n must be less than 1,000,000");
+  if(n > 1000000) throw new Error("n must be lower than 1,000,000");
 
   // No need to further calculations
   if(n === 1) return 0;
@@ -19,7 +20,7 @@ function randomNumber(n) {
   }
 
   // Get the maximum posible value as binary;
-  var maxPosibleValue = n - 1;
+  var maxPosibleValue = n-1;
 
   // Calculate the minimal length to express as binary
   // the maximum posible value
